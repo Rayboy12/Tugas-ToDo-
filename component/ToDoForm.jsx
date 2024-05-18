@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React, {useState} from "react";
 
 const ToDoForm = () => {
@@ -11,13 +12,26 @@ const ToDoForm = () => {
         <div className="todo-form">
         <p>~ Today I need to ~</p>
         <span>
-            <input
+            <TextField 
+            label="Task"
+            variant="filled"
             value={todo}
             onChange={(e) => {
                 setTodo(e.target.value);
             }}            
             />
-            <button onClick={() => handleClick(todo)}>Submit</button>
+            <Button 
+            variant="contained"
+            onClick={() => {
+                handleClick(todo);
+                setTodo("");
+            }}
+            >
+            Submit
+            </Button>
+            <Button variant="outlined" color="error" onClick={removeCompleted}>
+                Remove Complete
+            </Button>
         </span>
     </div>
     );

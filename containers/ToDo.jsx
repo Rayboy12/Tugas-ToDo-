@@ -1,8 +1,8 @@
 import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 
-import ToDoForm from '../components/ToDoForm';
-import ToDoList from '../components/ToDoList';
+import ToDoForm from '../component/ToDoForm';
+import ToDoList from '../component/ToDoList';
 
 const ToDo = () => {
   const [todos, setTodos] = useState([]);
